@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+venv/
+.env
+.env.*
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+
+# Log files
+*.log
+
+# Test coverage
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+.pytest_cache/
+
+# Byte-compiled / cache
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Exportações temporárias
+*.bak
+*.tmp
+*.orig
+
+# FastAPI / Uvicorn reloads
+*.pid
