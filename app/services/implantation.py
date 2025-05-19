@@ -14,7 +14,7 @@ async def getImplantationTreeById(access: str, site: int):
             res = await client.get(url, params={"site": site}, headers=headers)
             res.raise_for_status()
             return res.json()
-    except Exception as e:
+    except httpx.HTTPStatusError as e:
         raise HTTPException(
             status_code=e.response.status_code,
             detail=e.response.json()
@@ -32,7 +32,7 @@ async def getImplatationInfo(access: str, site: int):
             res = await client.get(url, params={"site": site}, headers=headers)
             res.raise_for_status()
             return res.json()
-    except Exception as e:
+    except httpx.HTTPStatusError as e:
         raise HTTPException(
             status_code=e.response.status_code,
             detail=e.response.json()
@@ -50,7 +50,7 @@ async def getImplatationStatic(access: str):
             res = await client.get(url, headers=headers)
             res.raise_for_status()
             return res.json()
-    except Exception as e:
+    except httpx.HTTPStatusError as e:
         raise HTTPException(
             status_code=e.response.status_code,
             detail=e.response.json()
@@ -68,7 +68,7 @@ async def getImplatationLubricants(access: str):
             res = await client.get(url, headers=headers)
             res.raise_for_status()
             return res.json()
-    except Exception as e:
+    except httpx.HTTPStatusError as e:
         raise HTTPException(
             status_code=e.response.status_code,
             detail=e.response.json()

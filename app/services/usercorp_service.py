@@ -14,9 +14,8 @@ async def getUsercorp(access: str):
             res = await client.get(url, headers=headers)
             res.raise_for_status()
             return res.json()
-    except Exception as e:
+    except httpx.HTTPStatusError as e:
         raise HTTPException(
             status_code=e.response.status_code,
             detail=e.response.json()
         )
-

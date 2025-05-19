@@ -1,0 +1,59 @@
+PASSOS PARA FAZER A API
+
+
+
+-> Criação do diretório do projeto "portalstream_api"
+
+-> Instalação ambiente virtual venv:
+    - python -m venv venv
+
+-> Execução do ambiente virtual:
+    - venv\Scripts\Activate
+
+-> Instalação de algumas libs python com pip install para realizar o projeto:
+    - FastAPI -> Framework moderno e performático para criação de APIs RESTful com Python. Baseado em type hints, permite autocompletar e validação automática com Pydantic.
+    - httpx -> Fazer requisições HTTP externas para outra API (por exemplo, login, refresh de token, busca de dados, etc).
+    - pydantic -> Criar modelos de dados (schemas) que validam as informações recebidas e enviadas na API (como parâmetros de entrada e saída).
+    - uvicorn -> Rodar o servidor local FastAPI, permitindo desenvolvimento com recarregamento automático usando a flag --reload.
+    - python-dotenv -> Evitar expor informações sensíveis diretamente no código-fonte, como a URL da API externa (URL_BASE).
+
+    pip install fastapi uvicorn httpx python-dotenv pydantic
+
+    pip install -r requirements.txt -> Cria o arquivo requirements.txt com as libs instaladas
+    pip freeze > requirements.txt -> "Grava as libs no arquico"
+
+-> Criação do arquivo .env para não expor a URL base da API
+
+-> Estrutura de diretórios do projeto app
+    - Config/config.py -> Para pegar a URL do .env
+
+    - routes/auth.py -> Rotas do fluxo de autenticação
+    - routes/implantation.py -> Rotas de implantação
+    - routes/usercorp.py -> Rota usercorp
+
+    - Schemas/auth -> Models para validação recebidas e enviadas para API
+
+    - services/auth_services -> Realiza todo o fluxo de autenticação do usuário
+    - services/implantation -> Realiza a exebição dos dados solicitados na rota. É necessário o token para validar se o usuário está autenticado.
+    - services/usercorp_service -> Realiza a exebição dos dados solicitados na rota. É necessário o token para validar se o usuário está autenticado.
+
+
+-> Arquivo MAIN.PY executa toda a aplicação com as rotas definias
+
+-> Alguns imports novos para mim que foram utilizados para fazer o projeto:
+
+    - APIRouter -> Para criar uma instância para definir as rotas da API:
+        Exemplo: router = APIRouter()
+
+    - HTTPBearer -> Exige um token no header da requisição.
+                 -> É utilizado junto com o DEPENDS().
+                 -> Serve para proteger a rota e obrigar o envio de um token de acesso
+    - HTTPAuthorizationCredentials -> Representa os dado extraídos do cabeçalho.
+                                   -> Dentro do HTTPAuthorizationCredentials vem credentials.scheme e credentials.credentials (token).
+
+    - httpx:
+            -> AsyncClient: Cria um client HTTP assíncrono
+            -> client.get: Faz uma requisição get
+            -> raise_for_status(): Verifica se a requisição teve erro. Se teve erro lança um exception com httpx.HTTPStatusError
+
+    - Meu Exeption pega o erro da requisição e retorna já da requisição. Não crio meu próprio tratamento de erros.

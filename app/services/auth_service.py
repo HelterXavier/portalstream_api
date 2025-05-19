@@ -15,7 +15,7 @@ async def authentication(username: str, password: str):
             res = await client.post(url, json=data)
             res.raise_for_status()
             return res.json()
-    except Exception as err:
+    except httpx.HTTPStatusError as err:
         raise HTTPException(
             status_code=err.response.status_code,
             detail=err.response.json()
@@ -33,7 +33,7 @@ async def varify_token(access: str):
             res = await client.post(url, json=data)
             res.raise_for_status()
             return res.json()
-    except Exception as err:
+    except httpx.HTTPStatusError as err:
         raise HTTPException(
             status_code=err.response.status_code,
             detail=err.response.json()
@@ -51,7 +51,7 @@ async def refresh_token(refresh: str):
             res = await client.post(url, json=data)
             res.raise_for_status()
             return res.json()
-    except Exception as err:
+    except httpx.HTTPStatusError as err:
         raise HTTPException(
             status_code=err.response.status_code,
             detail=err.response.json()

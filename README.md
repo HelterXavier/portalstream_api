@@ -1,40 +1,21 @@
 # DESAFIO 01 - SEMEQ
 
-## INSTALL
-
 <h1 align="center">
   API Proxy Portal Stream - Documentation
 </h1>
 
-<h2 align="center">
-  Information
-</h2>
-
 <p align="center">
-    This documentation has been created to explain about the endpoints.
+    This documentation was created to explain the endpoint created for the SEMEQ challenge
 </p>
 
 
-- **Python**
-- **FastAPI**
-- **httpx**
-- **pydantic**
-- **Uvicorn**
-- **python-dotenv**
----
-
-### Install
-
-You need to create a file with the extension **.env** in the root of the project to store the external url so as not to be exposed.
-
-```env
-URL_BASE="https:..."
-````
-
+## Install Project
 
 ```bash
 git clone git@github.com:HelterXavier/portalstream_api.git
+```
 
+```bash
 python -m venv venv
 
 venv\Scripts\Activate
@@ -44,21 +25,41 @@ pip install -r requirements.txt
 pip install uvicorn
 
 pip freeze > requirements.txt
+```
+### File .env with URL_BASE at the root
+```env
+URL_BASE="https:..."
+```
 
+## Run Project
+```bash
 uvicorn app.main:app --reload
 ```
 
-
-
-### URL base
-
-**URL:**  *http://127.0.0.1:8000/*
+## URL base
+**URL BASE:**  *http://127.0.0.1:8000/*
 
 <hr style="border: none; height:  1px; background-color: gray;">
 
-## POST
 
-| `POST - http://127.0.0.1:8000/token`
+## Libraries installed in the project
+
+Below are the libraries used in API construction, installed with `pip`:
+```bash
+pip install fastapi uvicorn httpx python-dotenv pydantic
+```
+
+- **FASTAPI** ➡️ Framework to create APIs RESTful with Python. Create routes and endpoints;
+- **HTTPX** ➡️ Make external HTTP requests to another API;
+Need to create a file with the extension **.env** in the root of the project to store the external url so as not to be exposed;
+- **PYDANTIC** ➡️ To create models (SCHEMAS) that validate the data received and sent from the API;
+- **UVICORN** ➡️ Run local server FASTAPI: *uvicorn app.main:app --reload*;
+- **PYTHON-DOTENV** ➡️ Loads environment variables. Used to avoid exposing information such as passwords, user, urls etc.
+
+
+## AUTH TOKEN
+
+`POST - http://127.0.0.1:8000/token`
 
 **Request Body Example:**
 
@@ -80,6 +81,8 @@ uvicorn app.main:app --reload
 
 <hr style="border: none; height:  1px; background-color: gray;">
 <br>
+
+## AUTH TOKEN
 
 | `POST - http://127.0.0.1:8000/token/verify`
 
@@ -164,72 +167,7 @@ CODE 200
       "id": 20433,
       "name": "GERDAU JACKSON",
       "corporation": 54
-    },
-    {
-      "id": 20397,
-      "name": "PED PORTAL",
-      "corporation": 54
-    },
-    {
-      "id": 10441,
-      "name": "PORTAL DAS ROSAS",
-      "corporation": 54
-    },
-    {
-      "id": 20439,
-      "name": "SEMEQ MOBILE",
-      "corporation": 54
-    },
-    {
-      "id": 20363,
-      "name": "SMQ SAINT LOUIS STL",
-      "corporation": 54
-    },
-    {
-      "id": 20446,
-      "name": "TEST 20250416",
-      "corporation": 708
-    },
-    {
-      "id": 20449,
-      "name": "TEST ALTEON",
-      "corporation": 708
-    },
-    {
-      "id": 20450,
-      "name": "TESTE 20250501",
-      "corporation": 708
-    },
-    {
-      "id": 20442,
-      "name": "TESTE-DO-BOREL",
-      "corporation": 54
-    },
-    {
-      "id": 20431,
-      "name": "TESTE MIGRACAO",
-      "corporation": 54
-    },
-    {
-      "id": 20443,
-      "name": "TESTE-ÓLEO",
-      "corporation": 706
-    },
-    {
-      "id": 20447,
-      "name": "TEST GABRIEL",
-      "corporation": 708
-    },
-    {
-      "id": 20448,
-      "name": "TEST VITINHO",
-      "corporation": 708
-    },
-    {
-      "id": 20398,
-      "name": "TREINAMENTO",
-      "corporation": 54
-    }
+    },...
   ],
   "notification": []
 }
@@ -242,6 +180,7 @@ CODE 200
 
 **Send Params**
 - Access Token: Bearer Access
+- Sites -> ID
 
 **Response:**
 
@@ -283,6 +222,7 @@ CODE 200
 
 **Send Params**
 - Access Token: Bearer Access
+- Sites -> ID
 
 **Response:**
 
