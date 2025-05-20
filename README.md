@@ -12,14 +12,19 @@
 ## Install Project
 
 ```bash
-# API
-git clone git@github.com:HelterXavier/portalstream_api.git
-
 # FRONT END REACET JS
 git clone git@github.com:HelterXavier/front_end_portalstream.git
+
+npm install
+
+npm run dev
 ```
 
 ```bash
+
+# API
+git clone git@github.com:HelterXavier/portalstream_api.git
+
 python -m venv venv
 
 venv\Scripts\Activate
