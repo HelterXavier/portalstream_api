@@ -11,14 +11,6 @@
 
 ## Install Project
 
-```bash
-# FRONT END REACET JS
-git clone git@github.com:HelterXavier/front_end_portalstream.git
-
-npm install
-
-npm run dev
-```
 
 ```bash
 
@@ -35,6 +27,17 @@ pip install uvicorn
 
 pip freeze > requirements.txt
 ```
+
+
+```bash
+# FRONT END REACT JS
+git clone git@github.com:HelterXavier/front_end_portalstream.git
+
+npm install
+
+npm run dev
+```
+
 ### File .env with URL_BASE at the root
 ```env
 URL_BASE="https:..."
