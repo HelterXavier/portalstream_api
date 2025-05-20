@@ -354,5 +354,4 @@ CODE 200
 ```
 
 ## Print Insomnia
-![Tela de Login](docs/)
 <img src="docs/implantation_get_lubricants.png" width="900"/>
