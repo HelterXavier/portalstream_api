@@ -12,7 +12,11 @@
 ## Install Project
 
 ```bash
+# API
 git clone git@github.com:HelterXavier/portalstream_api.git
+
+# FRONT END REACET JS
+git clone git@github.com:HelterXavier/front_end_portalstream.git
 ```
 
 ```bash
@@ -78,11 +82,14 @@ Need to create a file with the extension **.env** in the root of the project to 
 	"access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAzNzA0MjY1LCJpYXQiOjE3MDM3MDM5NjUsImp0aSI6IjdmOTZjZDExMzc4MDQzZDY5ZmRkZDgxYjliMjRmNDFhIiwidXNlcl9pZCI6MjEyfQnXPYekgNFsRSUdMrw3giB7pF21-KA5iOsTIHkxP5NLM"
 }
 ```
+## Print Insomnia
+
+<img src="docs/token.png" width="900"/>
 
 <hr style="border: none; height:  1px; background-color: gray;">
 <br>
 
-## AUTH TOKEN
+## VERIFY TOKEN
 
 | `POST - http://127.0.0.1:8000/token/verify`
 
@@ -101,8 +108,13 @@ CODE 200
 {}
 ```
 
+## Print Insomnia
+<img src="docs/verify_token.png" width="900"/>
+
 <hr style="border: none; height:  1px; background-color: gray;">
 
+
+## REFRESH TOKEN
 
 | `POST - http://127.0.0.1:8000/token/refresh`
 
@@ -114,6 +126,8 @@ CODE 200
 }
 ```
 
+
+
 **Response:**
 
 ```json
@@ -121,6 +135,10 @@ CODE 200
   "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3NDIwNjQ2LCJpYXQiOjE3NDc0MTkzMDYsImp0aSI6IjNjMmQxN2I3MjA5MjRhZGE5ZWZjOTg4M2UxMjQwZjk4IiwidXNlcl9pZCI6NTE5fQ.QKd938HZbPmNbXiGerRI97ZnQeSED_2cTo4ZvFYBtag"
 }
 ```
+
+## Print Insomnia
+
+<img src="docs/refresh_token.png" width="900"/>
 
 <hr style="border: none; height:  1px; background-color: gray;">
 
@@ -173,6 +191,9 @@ CODE 200
 }
 ```
 
+## Print Insomnia
+<img src="docs/get_usercorp.png" width="900"/>
+
 <hr style="border: none; height:  1px; background-color: gray;">
 
 
@@ -216,7 +237,8 @@ CODE 200
 		},
   ]}
 ```
-
+## Print Insomnia
+<img src="docs/implantition_tree.png" width="900"/>
 
 | `GET - http://127.0.0.1:8000/implantation/mobile/info?site=ID`
 
@@ -261,50 +283,9 @@ CODE 200
         }...
 ```
 
-<hr style="border: none; height:  1px; background-color: gray;">
+## Print Insomnia
+<img src="docs/implantition_info_site.png" width="900"/>
 
-| `GET - http://127.0.0.1:8000/implatation/mobile/info`
-
-**Send Params**
-- Access Token: Bearer Access
-
-**Response:**
-
-```json
-
-{
-  "asset_info": [
-    {
-      "devices": [
-        {
-          "device_id": 14138,
-          "serial_number": "042",
-          "device_type_id": 1,
-          "directions": [
-            "X",
-            "Y",
-            "Z"
-          ],
-          "services": [
-            1,
-            2
-          ]
-        },
-        {
-          "device_id": 14139,
-          "serial_number": "043",
-          "device_type_id": 1,
-          "directions": [
-            "X",
-            "Y",
-            "Z"
-          ],
-          "services": [
-            1,
-            2
-          ]
-        },
-```
 
 
 <hr style="border: none; height:  1px; background-color: gray;">
@@ -334,6 +315,8 @@ CODE 200
     }...
 ```
 
+## Print Insomnia
+<img src="docs/implantation_static.png" width="900"/>
 
 <hr style="border: none; height:  1px; background-color: gray;">
 
@@ -369,3 +352,7 @@ CODE 200
       "desc": "FAN"
     },...
 ```
+
+## Print Insomnia
+![Tela de Login](docs/)
+<img src="docs/implantation_get_lubricants.png" width="900"/>
