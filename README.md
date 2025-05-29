@@ -33,6 +33,8 @@ pip freeze > requirements.txt
 # FRONT END REACT JS
 git clone git@github.com:HelterXavier/front_end_portalstream.git
 
+Install Node.js -> https://nodejs.org/pt
+
 npm install
 
 npm run dev
