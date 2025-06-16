@@ -1,6 +1,13 @@
 from fastapi import APIRouter
+
+from app.schemas.auth import (
+    AccessToken,
+    AuthToken,
+    Credential,
+    RefreshToken,
+    VerifyToken,
+)
 from app.services.auth_service import authentication, refresh_token, varify_token
-from app.schemas.auth import Credential, AuthToken, RefreshToken, AccessToken, VerifyToken
 
 router = APIRouter()
 
